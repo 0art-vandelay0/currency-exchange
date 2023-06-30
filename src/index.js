@@ -42,9 +42,8 @@ function handleFormSubmit(event) {
     document.getElementById("usd-input").value = null;
     document.getElementById("exchange-choice").value = null;
     document.getElementById("response").innerHTML = null;
-    
-    getUsdConversions(usd, country);
 
+    getUsdConversions(country, usd);
 }
 
 window.addEventListener('load', function() {
