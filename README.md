@@ -25,7 +25,7 @@
     -   webpack-cli (v3.3.12)
     -   webpack-dev-server (v3.11.3)
     -   clean-webpack-plugin (v3.0.0)
-    -   dotenv-webpack (v8.0.1)
+    -   dotenv-webpack (v2.0.0)
 -   Loaders
     -   css-loader (v3.6.0)
     -   file-loader (v6.2.0)
@@ -54,6 +54,28 @@ The Currency Converter is a web application that allows users to convert currenc
 -   At the root directory, create a `.env` file and enter:
     -   `API_KEY=<paste_your_api_key_here>`<br>
         make sure to remove the angle brackets as well as any whitespaces or extra punctuation.
+-   Save and enter `npm run start` into terminal.
+-   A new window will open in your browser at port 8080.
+
+    -   Enter the amount in USD you want converted.
+    -   Select the end point conversion by code.
+    -   Hit the "Submit" button.
+
+    That's it!
+
+#### Debugging
+
+If the program does not run, try the following:
+
+-   Check for error messages
+    -   All errors will be routed to the DOM and read on the page.
+    -   If 404 error:
+        -   Check that the API_KEY variable in your .env file has no trailing whitespace or any punctuation. This includes no semicolon at the end of declaration.
+        -   Check that your API key/access code from [https://www.exchangerate-api.com](https://www.exchangerate-api.com/) is valid.
+        -   Try generating the GET request in an API development/testing app or in your browser URL:<br>
+            `https://v6.exchangerate-api.com/v6/`<strong>`<your_api_key_goes_here>`</strong>`/latest/USD`
+-   Ensure dotenv is installed
+    -   In your Terminal enter `npm install dotenv-webpack@2.0.0 --save-dev`
 
 ## **Known Bugs**
 
