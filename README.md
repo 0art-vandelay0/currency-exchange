@@ -1,8 +1,8 @@
-# &#x1F30C; **Currency Exchange** &#x1F320;
+# &#x1F4B5; **Currency Exchange** &#x1F4B4;
 
 #### **By Casey Hill**
 
-#### A calculator tool that will calculate the exchange rate from USD to a chosen currency. &#x1F680; &#x1F474; &#x1F4C6;
+#### A calculator tool that will calculate the exchange rate from USD to a chosen currency. &#x1F4B2; &#x27A1; &#x1F4B1;
 
 #### ...._"Money is the universal self-established value of all things. It has, therefore, robbed the whole world... of its proper value."_ - Karl Marx
 
@@ -34,7 +34,7 @@
 
 ## **Description**
 
-The Currency Converter is a web application that allows users to convert currencies based on the latest exchange rates. With this tool, users can easily calculate the equivalent amount of money between different currencies, making it convenient for travel, international transactions, and financial planning.
+The Currency Converter is a web application that allows you to convert USD to other currencies based on the latest exchange rates. You can easily calculate the exchange rate, making it convenient for travel planning, international transactions, and financial planning.
 
 ## **Setup/Installation Requirements** &#x1F4BB;
 
