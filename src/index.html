@@ -9,17 +9,18 @@
     <h3>Enter the amount to be exchanged from USD to a selected currency</h3>
     <form id="currency-exchange-form">
         <label for="usd-input">Enter amount in USD:</label><br>
-        <input id="usd-input" type="number" required><br>
+        <p>$<input id="usd-input" type="number" required></p><br>
         <label for="exchange-choice">Select the exchange:</label><br>
         <select id="exchange-choice">
-            <option value="EUR">EUR</option>
-            <option value="JPY">JPY</option>
-            <option value="GBP">GBP</option>
-            <option value="AUD">AUD</option>
-            <option value="OMR">OMR</option>
-            <option value="CAD">CAD</option>
-            <option value="MXN">MXN</option>
-            <option value="BMD">BMD</option>
+            <option value="EUR">EUR: Euro</option>
+            <option value="JPY">JPY: Japanese Yen</option>
+            <option value="GBP">GBP: Great British Pound</option>
+            <option value="AUD">AUD: Australian Dollar</option>
+            <option value="OMR">OMR: Omani Rial</option>
+            <option value="CAD">CAD: Canadian Dollar</option>
+            <option value="MXN">MXN: Mexican Peso</option>
+            <option value="BMD">BMD: Bermudian Dollar</option>
+            <option value="LRB">LRB</option> // This will throw an error (does not exist)
         </select><br>
         <button type="submit">Submit</button>
     </form>
