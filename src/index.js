@@ -30,9 +30,9 @@ function displayConversion(country, usd, conversion) {
     document.getElementById("response").innerHTML = `${usd} USD = ${conversion} ${country}`;
 }
 
-function printError(response, country) {
+function printError(country, error) {
     document.getElementById("response").innerHTML = `There was an error handling your exchange request for ${country}.
-    Error: ${response.message}`;
+        Error: ${error.message}`;
 }
 
 function handleFormSubmit(event) {
