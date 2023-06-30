@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Currency from './currency.js';
+import Currency from './js/currency.js';
 
 // Business Logic
 
@@ -49,7 +49,7 @@ function displayConversion(country, usd, conversion) {
 
 function printError(country, error) {
     document.getElementById("response").innerHTML = `There was an error handling your exchange request for <strong>${country}</strong>.<br>
-        <em>Error: ${error.message}</em>`;
+        <strong>Error:</strong> <em>${error.message}</em>`;
 }
 
 function handleFormSubmit(event) {
