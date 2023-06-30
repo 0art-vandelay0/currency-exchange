@@ -27,8 +27,8 @@ function getUsdConversions(country, usd) {
 
 
 function displayConversion(country, usd, conversion) {
-    if (conversion === null) {
-        document.getElementById("response").innerHTML = `The currency "${country}" doesn't exist.`;
+    if (isNaN(conversion)) {
+        printError(country, new Error(`The currency "${country}" doesn't exist.`));
     } else {
         const percentage = ((usd / conversion) * 100).toFixed(0);
         document.getElementById("response").innerHTML = `${usd} USD = ${conversion} ${country}<br>
