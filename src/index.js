@@ -27,19 +27,23 @@ function getUsdConversions(country, usd) {
 
 
 function displayConversion(country, usd, conversion) {
-    const percentage = ((usd / conversion) * 100).toFixed(0);
-    document.getElementById("response").innerHTML = `${usd} USD = ${conversion} ${country}<br>
-    That's about ${percentage}% up against the USD.`;
-    if (percentage > 100) {
-        document.getElementById("response").innerHTML += `<br>That's more expensive!`;
-    } else if (percentage < 100 && percentage > 75) {
-        document.getElementById("response").innerHTML += `<br>That's a little cheaper.`;
-    } else if (percentage <= 75 && percentage > 50) {
-        document.getElementById("response").innerHTML += `<br>That's a lot cheaper!`;
-    } else if (percentage <= 50){
-        document.getElementById("response").innerHTML += `<br>Damn, that will go a lot further!`;
+    if (conversion === null) {
+        document.getElementById("response").innerHTML = `The currency "${country}" doesn't exist.`;
     } else {
-        document.getElementById("response").innerHTML += `<br>That's about the same.`;
+        const percentage = ((usd / conversion) * 100).toFixed(0);
+        document.getElementById("response").innerHTML = `${usd} USD = ${conversion} ${country}<br>
+        That's about ${percentage}% up against the USD.`;
+        if (percentage > 100) {
+            document.getElementById("response").innerHTML += `<br>That's more expensive!`;
+        } else if (percentage < 100 && percentage > 75) {
+            document.getElementById("response").innerHTML += `<br>That's a little cheaper.`;
+        } else if (percentage <= 75 && percentage > 50) {
+            document.getElementById("response").innerHTML += `<br>That's a lot cheaper!`;
+        } else if (percentage <= 50){
+            document.getElementById("response").innerHTML += `<br>Damn, that will go a lot further!`;
+        } else {
+            document.getElementById("response").innerHTML += `<br>That's about the same.`;
+        }
     }
 }
 
