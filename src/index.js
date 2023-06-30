@@ -32,7 +32,7 @@ function displayConversion(country, usd, conversion) {
     } else {
         const percentage = ((usd / conversion) * 100).toFixed(0);
         document.getElementById("response").innerHTML = `${usd} USD = ${conversion} ${country}<br>
-        That's about ${percentage}% up against the USD.`;
+        That's about ${percentage}% against the USD.`;
         if (percentage > 100) {
             document.getElementById("response").innerHTML += `<br>That's more expensive!`;
         } else if (percentage < 100 && percentage > 75) {
@@ -48,21 +48,22 @@ function displayConversion(country, usd, conversion) {
 }
 
 function printError(country, error) {
-    document.getElementById("response").innerHTML = `There was an error handling your exchange request for ${country}.
-        Error: ${error.message}`;
+    document.getElementById("response").innerHTML = `There was an error handling your exchange request for <strong>${country}</strong>.<br>
+        <em>Error: ${error.message}</em>`;
 }
 
 function handleFormSubmit(event) {
     event.preventDefault();
     const usd = document.getElementById('usd-input').value;
     const country = document.getElementById('exchange-choice').value;
-    document.getElementById("usd-input").value = null;
-    document.getElementById("exchange-choice").value = null;
-    document.getElementById("response").innerHTML = null;
 
     getUsdConversions(country, usd);
+    document.getElementById("response").removeAttribute("class", "hidden");
 }
 
 window.addEventListener('load', function() {
     document.getElementById('currency-exchange-form').addEventListener('submit', handleFormSubmit);
+    document.getElementById("usd-input").value = null;
+    document.getElementById("exchange-choice").value = null;
+    document.getElementById("response").innerHTML = null;
 });
