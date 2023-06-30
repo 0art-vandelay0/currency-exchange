@@ -28,18 +28,12 @@ h3 {
     box-shadow: #f6eef4 0px 0px 10px;
 }
 
-ul#response {
-    border-radius: 30px;
+input#usd-input {
+    width: 25%;
+    margin: 5px;
     text-align: center;
-    width: 80%;
-    background-color: rgb(213, 213, 213);
-    color: black;
-    margin: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    max-width: 500px;
-    box-shadow: #f6eef4 0px 0px 10px;
+    box-shadow: #646363 0px 10px 20px;
+    border: .5px solid #5d5b5b;
 }
 
 select#exchange-choice {
@@ -49,4 +43,33 @@ select#exchange-choice {
     padding: 10px;
     border-radius: 10px;
     border: 1px solid black;
+    box-shadow: #646363 0px 10px 20px;
+    border: .5px solid #5d5b5b;
+}
+
+button {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: black;
+    color: whitesmoke;
+    margin: 5px;
+    box-shadow: #646363 0px 10px 20px;
+    border: 1px solid #5d5b5b;
+    
+}
+
+ul#response {
+    border-radius: 50px;
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    background-color: black;
+    color: whitesmoke;
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+    box-shadow: #ffffff 0px 0px 25px;
 }
