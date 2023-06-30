@@ -3,7 +3,6 @@ export default class Currency {
         try {
             const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`);
             const jsonifiedResponse = await response.json();
-            console.log(jsonifiedResponse.conversion_rates);
             if (!response.ok) {
                 const errorMessage = `${response.status} ${response.statusText}
                     ${jsonifiedResponse.message}`;
