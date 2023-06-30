@@ -5,13 +5,19 @@ import Currency from './currency.js';
 
 // Business Logic
 
-function getCurrencyByCountry(country) {
-    Currency.getCurrencyByCountry(country)
+function getUsdConversions(country, usd) {
+    Currency.getUsdConversions()
         .then(function(response) {
             if (response.conversion_rates) {
-                displayResults(response, country);
+                Currency.convertCurrency(response, country, usd)
+                    .then(function(conversion) {
+                        displayConversion(country, usd, conversion);
+                    })
+                    .catch(function(error) {
+                        printError(country, error);
+                    });
             } else {
-                printError(response, country);
+                printError(country, response);
             }
         });
 }
@@ -19,9 +25,9 @@ function getCurrencyByCountry(country) {
 
 // UI Logic
 
-function displayResults(response, country) {
-    const currency = response.conversion_rates[country];
-    document.getElementById("response").innerHTML = `1 USD = ${currency.toFixed(2)} ${country}`;
+
+function displayConversion(country, usd, conversion) {
+    document.getElementById("response").innerHTML = `${usd} USD = ${conversion} ${country}`;
 }
 
 function printError(response, country) {
@@ -31,11 +37,14 @@ function printError(response, country) {
 
 function handleFormSubmit(event) {
     event.preventDefault();
+    const usd = document.getElementById('usd-input').value;
     const country = document.getElementById('exchange-choice').value;
     document.getElementById("usd-input").value = null;
     document.getElementById("exchange-choice").value = null;
     document.getElementById("response").innerHTML = null;
-    getCurrencyByCountry(country);
+    
+    getUsdConversions(usd, country);
+
 }
 
 window.addEventListener('load', function() {
